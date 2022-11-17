@@ -3,7 +3,7 @@ extends Node2D
 var pic = load("res://Scenes/Pic.tscn")
 var mechant = load("res://Scenes/méchant2.tscn") 
 var plateforme = load("res://Scenes/méchant.tscn")
-var x = 0
+var x = 1
 
 func _ready():
 	$AudioStreamPlayer.play()

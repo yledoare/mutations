@@ -14,6 +14,11 @@ config/name="gamejam"
 run/main_scene="res://Scenes/Menu.tscn"
 config/icon="res://Sprites/icon.png"
 
+[display]
+
+window/size/width=1600
+window/size/height=900
+
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
