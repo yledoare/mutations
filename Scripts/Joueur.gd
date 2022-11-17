@@ -1,8 +1,8 @@
 extends KinematicBody2D
 
 export var Vitesse = 100
-const Gravite = 500
-const ForceDeSaut = -200
+var Gravite = 500
+var ForceDeSaut = -200
 const Axes = Vector2(0, -1)
 var coordonees = Vector2()
 var score = 0
@@ -13,6 +13,7 @@ func _physics_process(delta):
 	Course()
 	gravite(delta)
 	saut()
+	_mutation()
 
 func Course():
 	if Input.is_action_pressed("ui_right"):
@@ -42,7 +43,7 @@ func _on_Area2D_body_shape_entered(body_rid, body, body_shape_index, local_shape
 	body.queue_free()
 	$AudioStreamPlayer.play()
 	mutation = (mutation + 1) % 7
-	scale *= 1.2
+	scale *= 1.1
 	if mutation == 6:
 		die()
 
@@ -50,7 +51,18 @@ func die():
 	#mutation = 0
 	#scale = Vector2(1, 1)
 	#position = $spawnpos.global_position
-	get_tree().reload_current_scene()
+	get_tree().change_scene("res://Scenes/over.tscn")
 
 func _on_VisibilityNotifier2D_screen_exited():
 	die()
+
+func _mutation():
+	if mutation == 1:
+		ForceDeSaut = -240
+	elif mutation == 2:
+		ForceDeSaut = -200
+		Vitesse = 150
+	elif mutation == 4:
+		Vitesse = 100
+		Gravite = 400
+	

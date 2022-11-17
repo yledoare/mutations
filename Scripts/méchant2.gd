@@ -1,15 +1,20 @@
 extends KinematicBody2D
 
 var Bullet = load("res://Scenes/bidon.tscn")
+var est_bugge = false
 
 func _ready():
 	pass
 
 func _shoot():
 	var b = Bullet.instance()
-	b.position.x  = position.x
 	b.position.y  = position.y - 20
-	owner.add_child(b)
+	if !est_bugge:
+		b.position.x  = position.x
+		owner.add_child(b)
+	else:
+		b.position.x  = position.x
+		get_parent().add_child(b)
 	$AnimatedSprite.stop()
 
 func _on_Timer_timeout():
