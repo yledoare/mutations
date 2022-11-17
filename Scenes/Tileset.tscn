@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Sprites/bloc_niveau1.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8, 8 )
+
+[node name="Node" type="Node"]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -79, 2 )
+texture = ExtResource( 2 )
+
+[node name="Blocherbe" type="StaticBody2D" parent="Sprite"]
+collision_layer = 2
+
+[node name="hitbox" type="CollisionShape2D" parent="Sprite/Blocherbe"]
+shape = SubResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( -10, 10 )
+
+[node name="Blocherbe" type="StaticBody2D" parent="Sprite2"]
+collision_layer = 2
+
+[node name="hitbox" type="CollisionShape2D" parent="Sprite2/Blocherbe"]
+shape = SubResource( 1 )

@@ -1,0 +1,97 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Ressources/Name Smile.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://Sprites/baleine.jpg" type="Texture" id=2]
+[ext_resource path="res://Scripts/Menu.gd" type="Script" id=3]
+[ext_resource path="res://Ressources/gamejam2.ogg" type="AudioStream" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 26
+outline_color = Color( 0.568627, 1, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 62
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 47
+outline_color = Color( 0.780392, 0, 1, 1 )
+font_data = ExtResource( 1 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+
+[node name="Baleine" type="Sprite" parent="."]
+position = Vector2( 512, 300 )
+scale = Vector2( 0.512, 0.4 )
+texture = ExtResource( 2 )
+
+[node name="Button" type="Button" parent="."]
+margin_left = 192.0
+margin_top = 192.0
+margin_right = 832.0
+margin_bottom = 256.0
+custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 0.0117647, 0.87451, 0.0117647, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Jouer"
+flat = true
+
+[node name="Button3" type="Button" parent="."]
+margin_left = 192.0
+margin_top = 320.0
+margin_right = 832.0
+margin_bottom = 384.0
+custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 0, 0.905882, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Credits"
+flat = true
+
+[node name="Button2" type="Button" parent="."]
+margin_left = 192.0
+margin_top = 448.0
+margin_right = 832.0
+margin_bottom = 512.0
+custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Quitter"
+flat = true
+
+[node name="Label" type="Label" parent="."]
+margin_left = 192.0
+margin_top = 64.0
+margin_right = 832.0
+margin_bottom = 126.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Mutation"
+align = 1
+
+[node name="Panel" type="Panel" parent="."]
+margin_top = 1.0
+margin_right = 1025.0
+margin_bottom = 600.0
+
+[node name="Label" type="Label" parent="Panel"]
+margin_left = 8.0
+margin_top = 191.0
+margin_right = 1032.0
+margin_bottom = 319.0
+custom_colors/font_color = Color( 0.921569, 0, 1, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "Cree Par Tanguy, Yann et Mael"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_Button3_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/gamejam2.ogg-3a174efab9b919a2a223ced57a135df8.oggstr"
+
+[deps]
+
+source_file="res://Ressources/gamejam2.ogg"
+dest_files=[ "res://.import/gamejam2.ogg-3a174efab9b919a2a223ced57a135df8.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
